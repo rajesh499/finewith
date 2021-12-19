@@ -9,6 +9,5 @@ logging.basicConfig(filename='record.log', level=logging.DEBUG, format=f'%(ascti
 def blog():
     app.logger.info('Info level log')
     app.logger.warning('Warning level log')
-    return f"Welcome to the Blog"
- 
+    return f"Welcome to the Blog" 
 app.run(host='localhost', debug=True)
