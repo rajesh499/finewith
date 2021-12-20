@@ -1,7 +1,7 @@
 from flask import Flask    
 import logging
 app = Flask(__name__)
-logging.basicconfig(filename='/var/log/flask.log', level=logging.INFO)
+logging.basicConfig(filename='flask.log', level=logging.INFO)
 @app.route('/')
 def hello_world():
     return 'Hello world rajesh is here'
