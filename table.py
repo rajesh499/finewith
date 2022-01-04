@@ -1,11 +1,11 @@
 from flask import Flask, render_template, request
 from flask_mysqldb import MySQL
 import mysql.connector
-
+import logging
 app = Flask(__name__)
 
-
-app.config['MYSQL_HOST'] = 'Mysql2018'
+logging.basicConfig(filename='flask.log', level=logging.INFO,format='%(levelname)s:%(message)s')
+app.config['MYSQL_HOST'] = '0.0.0.0'
 app.config['MYSQL_USER'] = 'Mysql2018'
 app.config['MYSQL_PASSWORD'] = 'Mysql2018'
 app.config['MYSQL_DB'] ='regform'
@@ -22,7 +22,7 @@ mycursor.execute("CREATE DATABASE regform")
 
 
 mydb = mysql.connector.connect(
-  host="Mysql2018",
+  host="0.0.0.0",
   password="Mysql2018",
   database="regform"
 )
@@ -62,4 +62,4 @@ def users():
         return render_template('users.html',usersDetails=usersDetails)
 
 if __name__ == '__main__':
-  app.run(host="0.0.0.0",port=80)
+  app.run(host="0.0.0.0",port=80,debug=True)
