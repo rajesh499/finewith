@@ -1,17 +1,15 @@
 from flask import Flask, render_template, request
 from flask_mysqldb import MySQL
 import mysql.connector
-import logging
 app = Flask(__name__)
 
-logging.basicConfig(filename='flask.log', level=logging.INFO,format='%(levelname)s:%(message)s')
 app.config['MYSQL_HOST'] = 'mysql2018.cepbobatridn.us-east-1.rds.amazonaws.com'
 app.config['MYSQL_USER'] = 'Mysql2018'
 app.config['MYSQL_PASSWORD'] = 'Mysql2018'
 app.config['MYSQL_DB'] ='regform'
 
 mydb = mysql.connector.connect(
-  host="Mysql2018",
+  host="mysql2018.cepbobatridn.us-east-1.rds.amazonaws.com",
   user="Mysql2018",
   password="Mysql2018"
 )
