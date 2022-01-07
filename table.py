@@ -1,12 +1,14 @@
 from flask import Flask, render_template, request
 from flask_mysqldb import MySQL
 import mysql.connector
+
 app = Flask(__name__)
+
 
 app.config['MYSQL_HOST'] = 'mysql2018.cepbobatridn.us-east-1.rds.amazonaws.com'
 app.config['MYSQL_USER'] = 'Mysql2018'
 app.config['MYSQL_PASSWORD'] = 'Mysql2018'
-app.config['MYSQL_DB'] ='mydb2'
+app.config['MYSQL_DB'] ='regform'
 
 mydb = mysql.connector.connect(
   host="mysql2018.cepbobatridn.us-east-1.rds.amazonaws.com",
@@ -21,8 +23,9 @@ mycursor.execute("CREATE DATABASE regform")
 
 mydb = mysql.connector.connect(
   host="mysql2018.cepbobatridn.us-east-1.rds.amazonaws.com",
+  user="Mysql2018",
   password="Mysql2018",
-  database="mydb2"
+  database="regform"
 )
 
 mycursor = mydb.cursor()
