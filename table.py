@@ -9,8 +9,7 @@ logging.basicConfig(filename='flask.log', level=logging.DEBUG,format='%(levelnam
 logging.basicConfig(filename='flask.log', level=logging.WARNING,format='%(levelname)s:%(message)s')
 logging.basicConfig(filename='flask.log', level=logging.ERROR,format='%(levelname)s:%(message)s')
 logging.basicConfig(filename='flask.log', level=logging.CRITICAL,format='%(levelname)s:%(message)s')
-logging.basicConfig(filename='flask.log', level=logging.LOG,format='%(levelname)s:%(message)s')
-logging.basicConfig(filename='flask.log', level=logging.EXCEPTION,format='%(levelname)s:%(message)s')
+
 
 
 app.config['MYSQL_HOST'] = 'mysql2018.cepbobatridn.us-east-1.rds.amazonaws.com'
